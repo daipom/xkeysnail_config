@@ -19,6 +19,13 @@ define_multipurpose_modmap({
     Key.MUHENKAN: [Key.MUHENKAN, Key.RIGHT_CTRL],
 })
 
+define_keymap(re.compile("Gnome-terminal"), {
+    K("C-TAB"): K("C-PAGE_DOWN"),
+    K("C-Shift-TAB"): K("C-PAGE_UP"),
+    K("RC-y"): K("C-Shift-c"),
+    K("RC-p"): K("C-Shift-v"),
+}, "Gnome-terminal")
+
 define_keymap(None, {
     **generate_move_keys("h", "LEFT"),
     **generate_move_keys("j", "DOWN"),
@@ -41,6 +48,7 @@ define_keymap(None, {
         K("RC-w"): [K("C-Shift-RIGHT"), K("BACKSPACE")],
         K("RC-d"): [K("END"), K("Shift-HOME"), K("Shift-HOME"), K("BACKSPACE"), K("DELETE")],
     },
+    K("RC-Shift-d"): [K("Shift-END"), K("BACKSPACE")],
 }, "Vim-like edit")
 
 define_keymap(None, {
@@ -55,39 +63,3 @@ define_keymap(None, {
     K("HENKAN"): Key.GRAVE,
     K("KATAKANAHIRAGANA"): Key.GRAVE,
 }, "input method toggle")
-
-define_keymap(re.compile("Gnome-terminal"), {
-    K("C-TAB"): K("C-PAGE_UP"),
-    K("C-Shift-TAB"): K("C-PAGE_DOWN"),
-}, "Gnome-terminal")
-
-# define_modmap({
-#     Key.CAPSLOCK: Key.LEFT_CTRL,
-#     Key.RIGHT_CTRL: Key.LEFT_CTRL,
-# })
-
-
-# define_multipurpose_modmap({
-#     Key.Q: [Key.Q, Key.RIGHT_META],
-#     Key.APOSTROPHE: [Key.APOSTROPHE, Key.RIGHT_CTRL],
-# })
-
-
-# define_keymap(None, {
-#     # Vim-like
-#     K("RSuper-h"): K("Left"),
-#     K("RSuper-j"): K("Down"),
-#     K("RSuper-k"): K("Up"),
-#     K("RSuper-l"): K("Right"),
-#     # Emacs-like
-#     K("RC-a"): K("Home"),
-#     K("RC-e"): K("End"),
-#     K("RC-d"): K("Delete"),
-#     K("RC-h"): K("Backspace"),
-#     K("RC-k"): [K("Shift-End"), K("Delete")],
-#     # Mac-like
-#     K("Super-Backspace"): [K("Shift-Home"), K("Backspace")],
-#     # Eclipse-like
-#     K("Shift-Enter"): [K("End"), K("Shift-Enter")],
-#     K("C-Shift-Enter"): [K("Up"), K("End"), K("Enter")],
-# })
