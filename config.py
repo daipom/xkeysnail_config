@@ -26,6 +26,15 @@ define_keymap(re.compile("Gnome-terminal"), {
     K("RC-p"): K("C-Shift-v"),
 }, "Gnome-terminal")
 
+define_keymap(re.compile("Code"), {
+    K("RC-s"): K("Alt-Shift-RIGHT"),
+    K("RC-Alt-l"): K("Alt-RIGHT"),
+    K("RC-Alt-h"): K("Alt-LEFT"),
+    K("RC-Alt-j"): K("C-Alt-DOWN"), # go to next change
+    K("RC-Alt-k"): K("C-Alt-UP"), # go to previous change
+}, "Code")
+
+
 define_keymap(None, {
     **generate_move_keys("h", "LEFT"),
     **generate_move_keys("j", "DOWN"),
