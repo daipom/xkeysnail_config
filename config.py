@@ -10,6 +10,20 @@ def generate_move_keys(input, result):
         K(f"RC-LC-Super-{input}"): K(f"Super-LC-{result}"),
     }
 
+def map_emacs_to_vim():
+    return {
+        K("RC-w"): K("Alt-f"),
+        K("RC-b"): K("Alt-b"),
+        K("RC-EQUAL"): K("C-a"), # ^
+        K("RC-KEY_4"): K("C-e"),
+        K("RC-KEY_6"): K("C-e"),
+        K("RC-u"): K("C-Shift-RO"),
+        K("RC-Shift-d"): K("C-k"),
+        K("RC-d"): {
+            K("RC-w"): K("Alt-d"),
+            K("RC-d"): [K("C-e"), K("C-u")],
+        },
+    }
 
 define_modmap({
     Key.LEFT_SHIFT: Key.RIGHT_SHIFT,
@@ -24,6 +38,7 @@ define_keymap(re.compile("Gnome-terminal"), {
     K("C-Shift-TAB"): K("C-PAGE_UP"),
     K("RC-y"): K("C-Shift-c"),
     K("RC-p"): K("C-Shift-v"),
+    **map_emacs_to_vim(),
 }, "Gnome-terminal")
 
 define_keymap(re.compile("Code"), {
