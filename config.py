@@ -69,6 +69,6 @@ define_keymap(None, {
 }, "disable insert")
 
 define_keymap(None, {
-    K("HENKAN"): Key.GRAVE,
+    K("HENKAN"): K("ENTER"),
     K("KATAKANAHIRAGANA"): Key.GRAVE,
 }, "input method toggle")
