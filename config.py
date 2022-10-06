@@ -80,10 +80,18 @@ define_keymap(None, {
 }, "default underscore")
 
 define_keymap(None, {
+    K("RC-SPACE"): K("ENTER"),
+    K("RC-HENKAN"): K("ENTER"),
+}, "Enter Alias")
+
+define_keymap(None, {
+    K("RC-q"): K("ESC"),
+}, "Esc Alias")
+
+define_keymap(None, {
     K("INSERT"): [K("INSERT"), K("INSERT")],
 }, "disable insert")
 
 define_keymap(None, {
-    K("HENKAN"): K("ENTER"),
     K("KATAKANAHIRAGANA"): Key.GRAVE,
 }, "input method toggle")
