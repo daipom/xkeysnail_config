@@ -60,6 +60,8 @@ define_keymap(None, {
     **generate_move_keys("EQUAL", "HOME"), # ^
     **generate_move_keys("KEY_4", "END"),
     **generate_move_keys("KEY_6", "END"),
+    K("RC-LC-f"): K("PAGE_DOWN"),
+    K("RC-LC-b"): K("PAGE_UP"),
 }, "Vim-like cursor")
 
 define_keymap(None, {
